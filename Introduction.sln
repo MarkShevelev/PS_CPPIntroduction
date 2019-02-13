@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InlineFunctions", "InlineFunctions\InlineFunctions.vcxproj", "{33AC498B-49BD-43D5-9BD9-86C1B69865C7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05InlineFunctions", "InlineFunctions\InlineFunctions.vcxproj", "{33AC498B-49BD-43D5-9BD9-86C1B69865C7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05OverloadFunctions", "OverloadFunctions\OverloadFunctions.vcxproj", "{C4B47584-D520-42FD-9C1F-BC04D31EACDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{33AC498B-49BD-43D5-9BD9-86C1B69865C7}.Release|x64.Build.0 = Release|x64
 		{33AC498B-49BD-43D5-9BD9-86C1B69865C7}.Release|x86.ActiveCfg = Release|Win32
 		{33AC498B-49BD-43D5-9BD9-86C1B69865C7}.Release|x86.Build.0 = Release|Win32
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Debug|x64.ActiveCfg = Debug|x64
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Debug|x64.Build.0 = Debug|x64
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Debug|x86.ActiveCfg = Debug|Win32
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Debug|x86.Build.0 = Debug|Win32
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Release|x64.ActiveCfg = Release|x64
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Release|x64.Build.0 = Release|x64
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Release|x86.ActiveCfg = Release|Win32
+		{C4B47584-D520-42FD-9C1F-BC04D31EACDC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
