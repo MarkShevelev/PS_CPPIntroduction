@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05OverloadFunctions", "Over
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05TemplateFunctions", "TemplateFunctions\TemplateFunctions.vcxproj", "{CE164A15-3435-4D8F-A8EE-924047272805}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArraySearch", "ArraySearch\ArraySearch.vcxproj", "{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{CE164A15-3435-4D8F-A8EE-924047272805}.Release|x64.Build.0 = Release|x64
 		{CE164A15-3435-4D8F-A8EE-924047272805}.Release|x86.ActiveCfg = Release|Win32
 		{CE164A15-3435-4D8F-A8EE-924047272805}.Release|x86.Build.0 = Release|Win32
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Debug|x64.ActiveCfg = Debug|x64
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Debug|x64.Build.0 = Debug|x64
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Debug|x86.ActiveCfg = Debug|Win32
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Debug|x86.Build.0 = Debug|Win32
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Release|x64.ActiveCfg = Release|x64
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Release|x64.Build.0 = Release|x64
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Release|x86.ActiveCfg = Release|Win32
+		{9664A8C6-0406-4449-8993-C0BCAEEB4DB7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

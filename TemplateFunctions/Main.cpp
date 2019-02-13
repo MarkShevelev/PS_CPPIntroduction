@@ -89,9 +89,59 @@ void tpl_copy_array(T dst[], T src[], int size) {
 		dst[i] = src[i];
 }
 
+//Иногда тип значения, которое возвращает шаблонная функция, сложно определить
+//мы не знаем заранее какой тип T1 или T2 окажется "шире"
+template <typename T1, typename T2>
+/*?*/auto tpl_sum(T1 a, T2 b) { //тогда мы подставляем вместо имени типа ключевое слово auto
+	return a + b;
+}
+
+//auto означает, что возвращаемый тип будет определён компилятором
+
+//Ключевое слово auto можно использовать и с переменными
+void tempate_test3() {
+	auto variable = 3; //переменная получает тип int
+	auto another_variable = 3.1; //переменная получает тип double
+	auto third_variable = 3.1f; //переменная получает тип float
+	auto string = "Hello";  //переменная получает тип массив символов char[]
+
+	std::cout
+		<< variable << " "
+		<< another_variable << " "
+		<< third_variable << " "
+		<< string << " "
+		<< std::endl;
+}
+
+//функция, которая суммирует значения в массиве для любого типа данных
+template <typename T>
+auto tpl_array_sum(T arr[], int size) { //возвращаемый тип определит компилятор
+	auto sum = arr[0]; //здесь создаём переменную, тип которой определит компилятор, исходя из типа массива
+	for (int i = 1; i < size; ++i)
+		sum += arr[i];
+	return sum;
+}
+
+//Если возникает необходимость определить тип возвращаемого значения на основе выражения от известных типов,
+//применяется ключевое слово decltype и хвостовой возвращаемый тип
+template <typename T1, typename T2, typename T3>
+auto dumb_sum(T1 a, T2 b, T3 c) -> decltype(a+b) { //просим компилятор вывести тип, опираясь на выражение a+b
+	return a + b + c;
+}
+
+void template_test4() {
+	int a = 3, b = 4;
+	double da = 3.1, db = 4.1;
+
+	std::cout << dumb_sum(a, b, db) << std::endl; //целое число
+	std::cout << dumb_sum(a, db, b) << std::endl; //дробное число
+}
+
 int main() {
 	template_test();
 	template_test2();
+	tempate_test3();
+	template_test4();
 
 	return 0;
 }
