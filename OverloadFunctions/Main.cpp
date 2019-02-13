@@ -110,4 +110,6 @@ int main() {
 	overload_test();
 	overload_test2();
 	overload_test3();
+
+	return 0;
 }
