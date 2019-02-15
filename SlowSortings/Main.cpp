@@ -61,6 +61,14 @@ void buble_sort(int arr[], int size) {
 	}
 }
 
+//сортировка вставками
+void insert_sort(int arr[], int size) {
+	for (int outer = size - 1; outer > 0; --outer) {
+		for (int idx = outer-1; idx < size - 1 && arr[idx] > arr[idx + 1]; ++idx)
+			swap_elements(arr, idx, idx + 1);
+	}
+}
+
 void sort_test() {
 	int const size = 20;
 	int arr[20];
@@ -69,8 +77,9 @@ void sort_test() {
 	random_array(arr, size);
 	print_array(arr, size);
 	
-	if (true) select_sort(arr, size);
+	if (false) select_sort(arr, size);
 	if (false) buble_sort(arr, size);
+	if (false) insert_sort(arr, size);
 	print_array(arr, size);
 }
 
