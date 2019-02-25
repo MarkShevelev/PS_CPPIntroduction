@@ -105,5 +105,7 @@ int main() {
 	if (false) simple_recursion_test();
 	if (false) search_test();
 	if (false) fibonacci_test();
+
+	return 0;
 }
 
