@@ -20,11 +20,11 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B9F2B87A-CC2D-466A-A5F2-6D9CFC581E1B}</ProjectGuid>
+    <ProjectGuid>{45E25DE3-3E28-406B-AD20-6D86E8742FBC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SlowSortings</RootNamespace>
+    <RootNamespace>Recursion</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>05SlowSortings</ProjectName>
+    <ProjectName>06Recursion</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
