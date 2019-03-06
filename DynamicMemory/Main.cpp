@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 //Обыкновенно мы выделяем всю необходимую программе память сразу, используя автоматические переменные
 //В некоторых ситуациях нужно выделять память по мере работы программы
@@ -141,13 +142,62 @@ void memory_leak() {
  iii) Использование неверного типа delete/delete[]
 */
 
+//пользователь вводит неизвестное кол-во чисел
+//ввод заканчивается нулём
+//вывести числа в обратном порядке
+void reverse_numbers() {
+	int next_number = 0;
+	size_t size = 0;
+	int *dynamo_array = nullptr;
+
+	do {
+		std::cin >> next_number;
+		if (!std::cin.good()) { //проверка считанных данных на ошибки 
+			if (std::cin.bad()) { //невосстановимая ошибка
+				std::cout << "Unrecoverable error! Programm terminated!" << std::endl;
+				return;
+			}
+			std::cin.clear(); //восстановление потока
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //сброс введённых данных
+			std::cout << "Input error! Please enter integer number" << std::endl;
+			continue;
+		}
+
+		if (0 == next_number) break; //если введён ноль - завершение
+
+		auto tmp = new (std::nothrow) int[size + 1]; //необходимо занять чуть больше памяти
+		if (nullptr == tmp) { //проверяем, что память вообще была выделена
+			std::cout << "Not enough memory" << std::endl;
+			break;
+		}
+
+		if (nullptr != dynamo_array) { //если ранее выделенная память не пуста, то необходимо копировать данные из старой памяти в новую
+			for (size_t count = 0; count != size; ++count)
+				tmp[count] = dynamo_array[count];
+			//удаляем старый массив
+			delete[] dynamo_array;
+		}
+		dynamo_array = tmp;
+
+		dynamo_array[size] = next_number;
+		++size;
+	} while (true);
+
+	for (size_t count = size; count != 0; --count)
+		std::cout << dynamo_array[count-1] << " ";
+	std::cout << std::endl;
+
+	if (nullptr != dynamo_array) delete[] dynamo_array; //завершающее освобождение памяти
+}
+
 int main() {
 	if (false) new_test();
 	if (false) new_function_test();
 	if (false) new_array_test();
 	if (false) new_array_types();
 	if (false) new_with_init();
-	if (true) memory_leak();
+	if (false) memory_leak();
+	if (false) reverse_numbers();
 
 	return 0;
 }
