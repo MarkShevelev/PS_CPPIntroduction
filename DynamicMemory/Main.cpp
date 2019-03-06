@@ -118,7 +118,28 @@ void new_with_init() {
 	delete[] i_ptr;
 }
 
+//утечка памяти
+void memory_leak() {
+	//утечка памяти - ситуация, когда память была занята, но не была возвращена, а возможность для её освобождения утеряна
 
+	size_t counter = 0;
+	do {
+		//занимаем 100Mb памяти
+		unsigned char *arr = new (std::nothrow) unsigned char[100*1024*1024];
+		if (nullptr == arr) break;
+		counter += 100;
+		std::cout << '\r' << counter << "Mb";
+		//по завершении цикла данные, хранящиеся в arr теряются, освобождение памяти невозможно
+		//постепенно вся имеющася память будет исчерпана и её выделение станет невозможно
+	} while (true);
+	std::cout << std::endl;
+}
+
+/* Типичные ошибки
+ i) Двойное освобождение
+ ii) Освобождение по неверному адресу
+ iii) Использование неверного типа delete/delete[]
+*/
 
 int main() {
 	if (false) new_test();
@@ -126,6 +147,7 @@ int main() {
 	if (false) new_array_test();
 	if (false) new_array_types();
 	if (false) new_with_init();
+	if (true) memory_leak();
 
 	return 0;
 }
