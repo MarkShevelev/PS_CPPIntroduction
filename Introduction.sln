@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06Pointers", "Pointers\Poin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07ReferencesAndPointers", "ReferencesAndPointers\ReferencesAndPointers.vcxproj", "{2D1A9D4F-09C0-4F5D-8BB7-DF0801870B11}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07DynamicMemory", "DynamicMemory\DynamicMemory.vcxproj", "{360EE790-B778-4DE3-8479-F3F913B560C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{2D1A9D4F-09C0-4F5D-8BB7-DF0801870B11}.Release|x64.Build.0 = Release|x64
 		{2D1A9D4F-09C0-4F5D-8BB7-DF0801870B11}.Release|x86.ActiveCfg = Release|Win32
 		{2D1A9D4F-09C0-4F5D-8BB7-DF0801870B11}.Release|x86.Build.0 = Release|Win32
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Debug|x64.ActiveCfg = Debug|x64
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Debug|x64.Build.0 = Debug|x64
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Debug|x86.ActiveCfg = Debug|Win32
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Debug|x86.Build.0 = Debug|Win32
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Release|x64.ActiveCfg = Release|x64
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Release|x64.Build.0 = Release|x64
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Release|x86.ActiveCfg = Release|Win32
+		{360EE790-B778-4DE3-8479-F3F913B560C4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
