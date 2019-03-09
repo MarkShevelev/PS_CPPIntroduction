@@ -129,6 +129,25 @@ void print_range_test() {
 	delete[] dynamo_array;
 }
 
+//функци€, осуществл€юща€ суммирование в диапазоне
+//вариант с индексами
+template <typename T>
+T sum_range_index(T const arr[], int begin, int end) {
+	auto sum = arr[begin];
+	for (int it = begin + 1; it != end; ++it)
+		sum += arr[it];
+	return sum;
+}
+
+//вариант с ипользованием указателей
+template <typename T>
+T sum_range_pointer(T const * const begin, T const * const end) {
+	auto sum = *begin;
+	for (auto it = begin + 1; it != end; ++it)
+		sum += *it;
+	return sum;
+}
+
 int main() {
 	if (false) array_address_test();
 	if (false) array_elements_addresses();
