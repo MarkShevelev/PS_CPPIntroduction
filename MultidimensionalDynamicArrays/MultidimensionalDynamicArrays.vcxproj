@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B5865B91-00CC-4D32-9603-F9DAE26CCEDF}</ProjectGuid>
+    <ProjectGuid>{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ArraysAndPointers</RootNamespace>
+    <RootNamespace>MultidimensionalDynamicArrays</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>07ArraysAndPointers</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

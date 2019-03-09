@@ -23,7 +23,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07ReferencesAndPointers", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07DynamicMemory", "DynamicMemory\DynamicMemory.vcxproj", "{360EE790-B778-4DE3-8479-F3F913B560C4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArraysAndPointers", "ArraysAndPointers\ArraysAndPointers.vcxproj", "{B5865B91-00CC-4D32-9603-F9DAE26CCEDF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07ArraysAndPointers", "ArraysAndPointers\ArraysAndPointers.vcxproj", "{B5865B91-00CC-4D32-9603-F9DAE26CCEDF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultidimensionalDynamicArrays", "MultidimensionalDynamicArrays\MultidimensionalDynamicArrays.vcxproj", "{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,14 @@ Global
 		{B5865B91-00CC-4D32-9603-F9DAE26CCEDF}.Release|x64.Build.0 = Release|x64
 		{B5865B91-00CC-4D32-9603-F9DAE26CCEDF}.Release|x86.ActiveCfg = Release|Win32
 		{B5865B91-00CC-4D32-9603-F9DAE26CCEDF}.Release|x86.Build.0 = Release|Win32
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Debug|x64.ActiveCfg = Debug|x64
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Debug|x64.Build.0 = Debug|x64
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Debug|x86.ActiveCfg = Debug|Win32
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Debug|x86.Build.0 = Debug|Win32
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Release|x64.ActiveCfg = Release|x64
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Release|x64.Build.0 = Release|x64
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Release|x86.ActiveCfg = Release|Win32
+		{96CBCAED-9A4B-4DFF-9390-BD935A2D4274}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
