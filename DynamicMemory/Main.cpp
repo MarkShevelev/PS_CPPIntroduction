@@ -142,6 +142,20 @@ void memory_leak() {
  iii) Использование неверного типа delete/delete[]
 */
 
+//использование динамической памяти для создание данных в функции для последующего использования без копирования
+//создание единого массива из двух
+int * array_merge(int arr1[], size_t size1, int arr2[], size_t size2) {
+	auto new_array = new (std::nothrow) int[size1 + size2];
+
+	for (size_t pos = 0; pos != size1; ++pos)
+		new_array[pos] = arr1[pos];
+
+	for (size_t pos = 0; pos != size2; ++pos)
+		new_array[pos+size1] = arr2[pos];
+
+	return new_array;
+}
+
 //пользователь вводит неизвестное кол-во чисел
 //ввод заканчивается нулём
 //вывести числа в обратном порядке
