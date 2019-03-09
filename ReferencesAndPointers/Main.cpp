@@ -131,7 +131,7 @@ void reference_inderect(int const &i_ref) {
 	std::cout << i_ref << std::endl;
 }
 
-int temporaty_return(int x) {
+int temporary_return(int x) {
 	return x + 1; //создаётся новый, временный объект и помещается на стек
 }
 
@@ -146,8 +146,8 @@ void lifetime_examples() {
 	reference_inderect(a + b); //успешно выводит сумму
 
 	//константная ссылка может продлить время жизни объекта на стеке, который иначе должен был быть убран
-	//int const * const i_ptr = &(temporaty_return(3)); //ошибка, невозможно взять адрес от временного объекта
-	int const &i_ref = temporaty_return(a+b); //успешно!
+	//int const * const i_ptr = &(temporary_return(3)); //ошибка, невозможно взять адрес от временного объекта
+	int const &i_ref = temporary_return(a+b); //успешно!
 	std::cout << i_ref << std::endl;
 }
 
