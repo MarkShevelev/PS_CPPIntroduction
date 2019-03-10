@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 
 //указатель на указатель, что это?
 void pointer_to_pointer() {
@@ -150,12 +151,78 @@ void index_array() {
 	delete[] field_data;
 }
 
+//использование двумерного массива в функции
+//обратите внимание на тип данных - int * * - arr2D является массивом, хранящим адреса на строки
+int diagonal_sum(int * * arr2D, size_t rows, size_t cols) {
+	int sum = 0;
+	for (size_t pos = 0; pos < rows && pos < cols; ++pos)
+		sum += arr2D[pos][pos];
+	return sum;
+}
+
+//вызываем функцию
+void diagonal_sum_test() {
+	int user_rows, user_cols;
+	std::cout << "Please, enter the field dimensions x and y: ";
+	std::cin >> user_cols >> user_rows;
+
+	int * * index = new (std::nothrow) int*[user_rows];
+	for (size_t row = 0; row != user_rows; ++row)
+		index[row] = new (std::nothrow) int[user_cols];
+
+	//заполняем массив случайными значениями
+	srand(56);
+	for (size_t row = 0; row != user_rows; ++row)
+		for (size_t col = 0; col != user_cols; ++col)
+			index[row][col] = rand() % 2;
+
+	//выводим на печать
+	for (size_t row = 0; row != user_rows; ++row) {
+		for (size_t col = 0; col != user_cols; ++col)
+			 std::cout << index[row][col] << " ";
+		std::cout << std::endl;
+	}
+
+	std::cout << "Diagonal sum: " << diagonal_sum(index, user_rows, user_cols) << std::endl;
+
+	//освобождаем память
+	for (size_t row = 0; row != user_rows; ++row)
+		delete[] index[row];
+	delete[] index;
+}
+
+//автоматический двумерный массив
+void auto_twodimensional_array() {
+	int auto_arr2D[3][3] = { {1,2,3}, {4,5,6}, {7,8,9} };
+	//int * * ptr = auto_arr2D; //преобразование типов невозможно!
+	int * ptr = auto_arr2D[0]; //однако преобразование ряда к указателю на первый элемент возможно
+
+	//создадим индексный массив
+	int * * index = new (std::nothrow) int*[3];
+	for (size_t pos = 0; pos != 3; ++pos)
+		index[pos] = auto_arr2D[pos]; //мы сохраняем адреса рядов в индексном массиве
+
+	//выводим на печать
+	for (size_t row = 0; row != 3; ++row) {
+		for (size_t col = 0; col != 3; ++col)
+			std::cout << index[row][col] << " ";
+		std::cout << std::endl;
+	}
+
+	//используя индексный массив, мы можем передать данные автоматического массива в функцию
+	std::cout << "Diagonal sum: " << diagonal_sum(index, 3, 3) << std::endl;
+
+	delete[] index;
+}
+
 int main() {
 	if (false) pointer_to_pointer();
 	if (false) array_of_pointers();
 	if (false) dynamo_array_of_pointers();
 	if (false) anysize_twodimensional_dynamo_array();
-	if (true) index_array();
+	if (false) index_array();
+	if (false) diagonal_sum_test();
+	if (false) auto_twodimensional_array();
 
 	return 0;
 }
