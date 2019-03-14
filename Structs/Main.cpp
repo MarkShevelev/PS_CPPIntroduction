@@ -7,12 +7,12 @@
 
 //пример работы с рублями и копейками
 //т.к. функция не может вернуть два числа, то мы перезаписываем память опосредовано
-void sum_currency(int r1, int c1, int r2, int c2, int *r, int *c) { 
+void sum_money(int r1, int c1, int r2, int c2, int *r, int *c) { 
 	*r = r1 + r2 + (c1 + c2) / 100;
 	*c = (c1 + c2) % 100;
 }
 
-void sum_currency_test() {
+void sum_money_test() {
 	//необходимо завести четыре переменные
 	int r1, c1, r2, c2, r, c;
 
@@ -24,7 +24,7 @@ void sum_currency_test() {
 	std::cin >> r2 >> c2;
 
 	//затем вызвать функцию, не перепутав порядок аргументов
-	sum_currency(r1, c1, r2, c2, &r, &c);
+	sum_money(r1, c1, r2, c2, &r, &c);
 
 	std::cout << "Summ is " << r << " rub and " << c << " kop" << std::endl;
 }
@@ -141,10 +141,39 @@ void struct_test() {
 	std::cout << p_ptr->x << " " << p_ptr->y << std::endl;
 }
 
+//возможность обращения к структуре как целому позволяет принимать и возвращать такие данные в функциях по одному имени
+//работа с денежными средствами с использованием структур
+
+struct Money {
+	int rub, kop;
+};
+
+Money sum_struct_money(Money a, Money b) {
+	return { a.rub + b.rub + (a.kop + b.kop) / 100, (a.kop + b.kop) % 100 };
+}
+
+void sum_struct_money_test() {
+	//необходимо завести всего две переменные
+	Money a, b;
+
+	//считывание идёт с использованием одного имени и подраздела
+	std::cout << "Please, enter the first amount rub kop: ";
+	std::cin >> a.rub >> a.kop;
+
+	std::cout << "Please, enter the second amount rub kop: ";
+	std::cin >> b.rub >> b.kop;
+
+	//функция вызывается всего с двумя аргументами, как и при обычном сложении
+	Money res = sum_struct_money(a,b); //нет никакого косвенного доступа, т.к. структура позволяет вернуть объединённые данные
+
+	std::cout << "Summ is " << res.rub << " rub and " << res.kop << " kop" << std::endl;
+}
+
 int main() {
-	if (false) sum_currency_test();
+	if (false) sum_money_test();
 	if (false) segments_test();
 	if (false) struct_test();
+	if (false) sum_struct_money_test();
 
 	return 0;
 }
