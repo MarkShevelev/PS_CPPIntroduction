@@ -222,7 +222,7 @@ int main() {
 	if (false) anysize_twodimensional_dynamo_array();
 	if (false) index_array();
 	if (false) diagonal_sum_test();
-	if (false) auto_twodimensional_array();
+	if (false) auto_twodimensional_array(); 
 
 	return 0;
 }
