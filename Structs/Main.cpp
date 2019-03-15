@@ -169,11 +169,79 @@ void sum_struct_money_test() {
 	std::cout << "Summ is " << res.rub << " rub and " << res.kop << " kop" << std::endl;
 }
 
+//Использование структур для работы со сложными данными, например динамеческим массивом
+struct IntArray {
+	int *data; //указатель на динамическую память, где размещается массив
+	size_t 
+		  capacity //общее число элементов
+		, used;    //число элементов, которые заняты
+};
+
+IntArray new_intarray(size_t initial_capacity) {
+	int *memory = new (std::nothrow) int[initial_capacity]; //пытаемся выделить память
+	return { memory, nullptr == memory ? 0 : initial_capacity, 0 }; //структура типа IntArray будет автоматически инициализирована переданным набором значений
+}
+
+void delete_intarray(IntArray &arr) {
+	delete[] arr.data;
+	arr.capacity = 0;
+	arr.used = 0;
+}
+
+bool push_intarray(IntArray &arr, int x) {
+	if (arr.capacity == arr.used) {
+		int *memory = new (std::nothrow) int[arr.capacity * 2 + 1]; //занимаем массив большего размера
+		if (nullptr == memory) return false;
+
+		//копируем данные в новую память
+		for (size_t count = 0; count != arr.capacity; ++count)
+			memory[count] = arr.data[count];
+		delete[] arr.data;
+		arr.data = memory;
+		arr.capacity = arr.capacity * 2 + 1;
+	}
+
+	arr.data[arr.used++] = x;
+	return true;
+}
+
+bool pop_intarray(IntArray &arr, int &res) {
+	if (0 == arr.used) return false;
+	res = arr.data[--arr.used];
+	return true;
+}
+
+void dynamic_intarray_test() {
+	IntArray arr = new_intarray(1);
+	if (nullptr == arr.data) {
+		std::cout << "Can't allocate memory!" << std::endl;
+		return;
+	}
+
+	int user_input;
+	do {
+		std::cin >> user_input;
+		if (0 == user_input) break;
+		if (!push_intarray(arr, user_input)) {
+			std::cout << "Not enough memory..." << std::endl;
+			break;
+		}
+	} while (true);
+
+	int output;
+	while (pop_intarray(arr,output))
+		std::cout << output << " ";
+	std::cout << std::endl;
+
+	delete_intarray(arr);
+}
+
 int main() {
 	if (false) sum_money_test();
 	if (false) segments_test();
 	if (false) struct_test();
 	if (false) sum_struct_money_test();
+	if (false) dynamic_intarray_test();
 
 	return 0;
 }
