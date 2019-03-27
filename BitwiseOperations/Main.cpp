@@ -102,7 +102,7 @@ void bitset_test() {
 
 	std::cout << "Choose position to set 0: ";
 	std::cin >> pos;
-	set &= 1u << pos;
+	set &= ~(1u << pos);
 	std::cout << std::bitset<8>(set) << std::endl;
 }
 
